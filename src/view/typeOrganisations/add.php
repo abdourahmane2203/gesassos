@@ -54,85 +54,84 @@
                                                 </td>
                                                 <td class="">
                                                     <h6>
-                                                        <a class="btn btn-primary" data-toggle="modal" data-target="#modalEdit"><i class="text-white fas fa-align-center"></i></a>
-                                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"><i class="text-white fa fa-trash"></i></a>
+                                                        <a class="btn btn-primary" data-toggle="modal" data-target="#modalEdit<?= $typeOrg['id']; ?>"><i class="text-white fas fa-align-center"></i></a>
+                                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?= $typeOrg['id']; ?>"><i class="text-white fa fa-trash"></i></a>
                                                     </h6>
 
                                                 </td>
 
-                                            </tr>
-                                            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Voulez vous vraiment supprimer ce type d'organisation
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">annuler</button>
-                                                            <a type="button" href="/gesassos/typeOrganisations/deleteOne/<?= $typeOrg['id']; ?>" class="btn btn-success">supprimer</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Type d'Organisation</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-12">
-                                                                <div class="card">
-                                                                    <div class="card-header">
-                                                                        <h5>Edit type d'Organisation</h5>
-                                                                    </div>
-
-                                                                    <div class="card-block">
-                                                                        <form class="form-material" action="/gesassos/TypeOrganisations/add" method="post">
-
-                                                                            <div class="form-group form-success">
-                                                                                <label class="float-label">Type</label>
-                                                                                <input type="text" value="<?= $typeOrg['libelle'] ?>" name="libelle" class="form-control">
-                                                                                <span class="form-bar"></span>
-
-                                                                            </div>
-
-                                                                            <div class="form-group form-success">
-                                                                                <label class="float-label">Description</label>
-                                                                                <textarea  name="desc" id="" cols="7" rows="5" class="form-control">
-                                                                                <?= $typeOrg['description'] ?>
-                                                                                </textarea>
-                                                                                <span class="form-bar"></span>
-
-                                                                            </div>
-
-                                                                            <div class="modal-footer">
-                                                                                <input type="hidden" name="id" value="<?=$typeOrg['id'] ;?>">
-                                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                                                                                <button type="submit" name="btn_submit" value="edit" class="btn btn-success">Mettre à jour</button>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-
-                                                                </div>
+                                                <div class="modal fade" id="modalDelete<?= $typeOrg['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Suppression type d'organisation</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Voulez vous vraiment supprime ce type d'organisation: <?= $typeOrg['libelle']; ?>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">annuler</button>
+                                                                <a type="button" href="/gesassos/typeOrganisations/deleteOne/<?= $typeOrg['id']; ?>" class="btn btn-success">supprimer</a>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
-                                            </div>
 
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modalEdit<?= $typeOrg['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Type d'Organisation</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="col-md-12">
+                                                                    <div class="card">
+                                                                        <div class="card-header">
+                                                                            <h5>Edit type d'Organisation</h5>
+                                                                        </div>
+
+                                                                        <div class="card-block">
+                                                                            <form class="form-material" action="/gesassos/TypeOrganisations/add" method="post">
+
+                                                                                <div class="form-group form-success">
+                                                                                    <label class="float-label">Type</label>
+                                                                                    <input type="text" value="<?= $typeOrg['libelle'] ?>" name="libelle" class="form-control">
+                                                                                    <span class="form-bar"></span>
+
+                                                                                </div>
+
+                                                                                <div class="form-group form-success">
+                                                                                    <label class="float-label">Description</label>
+                                                                                    <textarea name="desc" id="" cols="7" rows="5" class="form-control">
+                                                                                <?= $typeOrg['description'] ?>
+                                                                                </textarea>
+                                                                                    <span class="form-bar"></span>
+
+                                                                                </div>
+
+                                                                                <div class="modal-footer">
+                                                                                    <input type="hidden" name="id" value="<?= $typeOrg['id']; ?>">
+                                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                                                                                    <button type="submit" name="btn_submit" value="edit" class="btn btn-success">Mettre à jour</button>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>

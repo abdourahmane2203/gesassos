@@ -40,15 +40,17 @@
                             </div>
                             <div class="card-block">
                                 <div class="table-responsive">
-                                    <table class="table table-hover m-b-0 without-header">
+                                
+                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                         <thead>
-                                            <th>
-                                            <td>Telephone</td>
-                                            <td>Email</td>
-                                            <td>adresse</td>
-                                            <td>Organisation</td>
-                                            <td>Actions</td>
-                                            </th>
+                                            <tr>
+                                            <th>Nom et Prénom</th>
+                                            <th>Telephone</th>
+                                            <th>Email</th>
+                                            <th>adresse</th>
+                                            <th>Organisation</th>
+                                            <th>Actions</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach ($data[0]['membres'] as $membre) : ?>
@@ -78,14 +80,12 @@
                                                     <td class="">
                                                         <h6>
                                                             <!-- <a class="btn btn-success" href=""><i class="fas fa-eye"></i></a> -->
-                                                            <a class="btn btn-primary" data-toggle="modal" data-target="#modalEdit"><i class="text-white fas fa-align-center"></i></a>
-                                                            <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"><i class="text-white fa fa-trash"></i></a>
+                                                            <a class="btn btn-primary" data-toggle="modal" data-target="#modalEdit<?= $membre['id']; ?>"><i class="text-white fas fa-align-center"></i></a>
+                                                            <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?= $membre['id']; ?>"><i class="text-white fa fa-trash"></i></a>
                                                         </h6>
                                                     </td>
 
-                                                </tr>
-
-                                                <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="modalDelete<?= $membre['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -95,7 +95,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Voulez vous vraiment supprimer ce membre
+                                                                Voulez vous vraiment supprimer ce membre : <?= $membre['prenoms'] . ' ' . $membre['nom'] ?>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">annuler</button>
@@ -105,7 +105,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="modalEdit<?=$membre['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -185,6 +185,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </tr>
+
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>

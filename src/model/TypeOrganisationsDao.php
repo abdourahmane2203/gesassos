@@ -100,6 +100,21 @@ class TypeOrganisationsDao extends \config\Model
         }
         return $data;
     }
+
+    public static function countTypeOrg() {
+       
+        $sql = "SELECT count(*)
+         FROM type_organisations
+         ";
+ 
+         $exe = self::getBdd()->query($sql);
+ 
+         if ($exe) {
+             
+             return $exe->fetch();
+         }
+         return ['no data found'];
+     }
    
 
 }

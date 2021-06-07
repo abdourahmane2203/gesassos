@@ -107,4 +107,19 @@ class MembresDao extends \config\Model
         }
         return $data;
     }
+
+    public static function countMembre() {
+       
+        $sql = "SELECT count(*)
+         FROM membres
+         ";
+ 
+         $exe = self::getBdd()->query($sql);
+ 
+         if ($exe) {
+             
+             return $exe->fetch();
+         }
+         return ['no data found'];
+     }
 }

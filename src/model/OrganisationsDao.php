@@ -27,6 +27,38 @@ class OrganisationsDao extends \config\Model
         return ['no data found'];
     }
 
+    public static function countOrg() {
+       
+        $sql = "SELECT count(*)
+         FROM organisations
+         ";
+ 
+         $exe = self::getBdd()->query($sql);
+ 
+         if ($exe) {
+             
+             return $exe->fetch();
+         }
+         return ['no data found'];
+     }
+
+    public static function findOne($id) {
+       
+        $sql = "SELECT *
+         FROM organisations where id=$id
+         ";
+ 
+         $exe = self::getBdd()->query($sql);
+ 
+         if ($exe) {
+             while ($d = $exe->fetch()) {
+                 $data []= $d;
+             }
+             return $data;
+         }
+         return ['no data found'];
+     }
+
    
     /**
      * UPDATE BALANCE

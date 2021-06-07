@@ -4,15 +4,31 @@
 <head>
 
     <style>
-
-        .img-css{
+        .img-css {
             display: inline-block;
             width: auto;
             height: 50px;
             margin-top: 5%;
-           
+
         }
-    
+
+        body {
+            --table-width: 100%;
+            /* Or any value, this will change dinamically */
+        }
+
+        tbody {
+            display: block;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        thead,
+        tbody tr {
+            display: table;
+            width: var(--table-width);
+            table-layout: fixed;
+        }
     </style>
     <title>Gestion des organisations</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
@@ -47,6 +63,11 @@
     <link rel="stylesheet" type="text/css" href="../src/view/assets/css/jquery.mCustomScrollbar.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../src/view/assets/css/style.css">
+     <!-- CSS DATATABLE -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
 </head>
 
 <body>
@@ -149,15 +170,15 @@
                                     <span class="badge bg-c-red"></span>
                                 </a>
                                 <ul class="show-notification">
-                                    <li>
+                                    <!-- <li>
                                         <h6>Notifications</h6>
                                         <label class="label label-danger">New</label>
-                                    </li>
+                                    </li> -->
                                     <!-- <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius" src="../src/view/assets/images/avatar-2.jpg" alt="Generic placeholder image">
                                             <div class="media-body">
-                                                <h5 class="notification-user">John Doe</h5>
+                                                <h5 class="notification-user">Samba Lo</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
@@ -188,7 +209,7 @@
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
                                     <img src="../src/view/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <span>Samba Lo</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -212,11 +233,11 @@
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
                                     </li> -->
-                                    <li class="waves-effect waves-light">
+                                    <!-- <li class="waves-effect waves-light">
                                         <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                         </ul>
@@ -233,7 +254,7 @@
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius" src="../src/view/assets/images/avatar-4.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
+                                        <span id="more-details">Samba Lo<i class="fa fa-caret-down"></i></span>
                                     </div>
                                 </div>
                                 <div class="main-menu-content">
@@ -258,7 +279,7 @@
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="index.html" class="waves-effect waves-dark">
+                                    <a href="/gesassos/organisations/add" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
@@ -274,21 +295,21 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                    <li class=" ">
+                                        <li class=" ">
                                             <a href="/gesassos/typeOrganisations/add" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Type d'organisations</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                    <li class=" ">
+                                        <li class=" ">
                                             <a href="/gesassos/organisations/add" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Organisation </span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                        
+
                                         <li class=" ">
                                             <a href="/gesassos/membres/add" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -296,8 +317,8 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                    
-                                       
+
+
                                         <!-- <li class=" ">
                                             <a href="/gesassos/typeorganisations/add" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -308,7 +329,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            
+
                         </div>
                     </nav>
                     <div class="pcoded-content">

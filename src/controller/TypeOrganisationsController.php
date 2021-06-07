@@ -10,7 +10,7 @@ class TypeOrganisationsController extends Controller
     public function add() {
 
         if (!empty($_POST) && !empty($_POST['btn_submit']=='add')) {
-            if (!empty($_POST['libelle']) && !empty($_POST['desc'])) {
+            if (!empty($_POST['libelle'])) {
                 $addTypeOrg = TypeOrganisationsDao::insert($_POST); 
             } else {
                 echo "veuillez saisir tous les champs !"; die;
