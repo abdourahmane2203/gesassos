@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="index.html">
+                        <a href="#">
                             <img class="img-css" src="../src/view/assets/images/logo.png" alt="Logo Ville de Mbour" />
                         </a>
                         <a class="mobile-options waves-effect waves-light">
@@ -165,10 +165,10 @@
                         </ul>
                         <ul class="nav-right">
                             <li class="header-notification">
-                                <a href="#!" class="waves-effect waves-light">
+                                <!-- <a href="#!" class="waves-effect waves-light">
                                     <i class="ti-bell"></i>
                                     <span class="badge bg-c-red"></span>
-                                </a>
+                                </a> -->
                                 <ul class="show-notification">
                                     <!-- <li>
                                         <h6>Notifications</h6>
@@ -208,7 +208,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="../src/view/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <!-- <img src="../src/view/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image"> -->
                                     <span>Samba Lo</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -233,11 +233,11 @@
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
                                     </li> -->
-                                    <!-- <li class="waves-effect waves-light">
+                                    <li class="waves-effect waves-light">
                                         <a href="auth-normal-sign-in.html">
-                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                            <i class="ti-layout-sidebar-left"></i> Se deconnecter
                                         </a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -252,7 +252,7 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="../src/view/assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <!-- <img class="img-80 img-radius" src="../src/view/assets/images/avatar-4.jpg" alt="User-Profile-Image"> -->
                                     <div class="user-details">
                                         <span id="more-details">Samba Lo<i class="fa fa-caret-down"></i></span>
                                     </div>
@@ -345,9 +345,9 @@
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
-                                            <li class="breadcrumb-item">
+                                            <!-- <li class="breadcrumb-item">
                                                 <a href="index.html"> <i class="fa fa-home"></i> </a>
-                                            </li>
+                                            </li> -->
                                             <!-- <li class="breadcrumb-item"><a href="#!">Dashboard</a> -->
                                             </li>
                                         </ul>

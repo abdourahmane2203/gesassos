@@ -66,4 +66,14 @@ class OrganisationsController extends Controller
         exit;
         //echo 'deleted '. $id;
     }
+
+    public function membres()
+    {
+        $membresByOrg = MembresDao::findMembresByOrg($_GET['id']);
+        $this->view->data[] = [
+            'membres' => $membresByOrg,
+        ];
+
+        return $this->view->load("organisations/membresByOrg"); 
+    }
 }

@@ -112,7 +112,7 @@
 
                                                     <td class="">
                                                         <h6>
-                                                            <a class="btn btn-success" data-toggle="modal" data-target="#modalRedirect"><i class="text-white fas fa-eye"></i></a>
+                                                            <a class="btn btn-success" href="/gesassos/organisations/membres?id=<?=$org['id'];?>"><i class="text-white fas fa-eye"></i></a>
                                                             <a class="btn btn-primary" data-toggle="modal" data-target="#modalEdit<?= $org['id']; ?>"><i class="text-white fas fa-align-center"></i></a>
                                                             <a class="btn btn-danger" data-toggle="modal" data-target="#modalDelete<?=$org['id'];?>"><i class="text-white fa fa-trash"></i></a>
                                                         </h6>
