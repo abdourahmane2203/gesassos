@@ -22,10 +22,20 @@ class OrganisationsController extends Controller
             }
         }
 
-        if (!empty($_POST) && !empty($_POST['btn_submit'] == 'edit')) {
+        elseif (!empty($_POST) && !empty($_POST['btn_submit'] == 'edit')) {
             extract($_POST);
             if (!empty($zone_interventions) && !empty($theme) && !empty($contacts) && !empty($adresse) && !empty($organisations)) {
                 OrganisationsDao::updateOne($_POST);
+            } else {
+                echo "veuillez saisir tous les champs !";
+                die;
+            }
+        }
+
+        elseif (!empty($_POST) && !empty($_POST['btn_submit'] == 'search')) {
+            extract($_POST);
+            if (!empty($zone_interventions) && !empty($theme) && !empty($contacts) && !empty($adresse) && !empty($type_organisations)) {
+                OrganisationsDao::insert($_POST);
             } else {
                 echo "veuillez saisir tous les champs !";
                 die;

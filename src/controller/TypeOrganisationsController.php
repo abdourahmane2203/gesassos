@@ -17,11 +17,29 @@ class TypeOrganisationsController extends Controller
             }
         }
 
-        if (!empty($_POST) && !empty($_POST['btn_submit']=='edit')) {
+        elseif (!empty($_POST) && !empty($_POST['btn_submit']=='edit')) {
             if (!empty($_POST['libelle']) && !empty($_POST['desc'])) {
                 $addTypeOrg = TypeOrganisationsDao::updateOne($_POST); 
             } else {
                 echo "veuillez saisir tous les champs !"; die;
+            }
+        }
+
+        elseif (!empty($_POST) && !empty($_POST['btn_submit'] == 'search')) {
+            extract($_POST);
+            
+            if (!empty($typeOrg)) {
+                
+                $typeOrg_r = TypeOrganisationsDao::findByTypeOrg($typeOrg);
+                
+                $this->view->data = [
+                    'typeOrg_r'=>$typeOrg_r,
+                ];
+                //var_dump($this->view->data); die;
+                
+            } else {
+                echo '<script>alert("Veuillez saisir type d\'organisation !")</script>';
+                //die;
             }
         }
 

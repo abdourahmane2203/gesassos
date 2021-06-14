@@ -1,3 +1,4 @@
+
 <!-- Page-header end -->
 <div class="pcoded-inner-content">
     <!-- Main-body start -->
@@ -14,9 +15,10 @@
                     <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">
                         + Nouvel type d'organisation
                     </button>
+
                     <div class="card table-card">
                         <div class="card-header">
-                            <h5>Liste des organisations</h5>
+                            <h5>Liste des types d'organisations</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -29,12 +31,14 @@
                         </div>
                         <div class="card-block">
                             <div class="table-responsive">
-                                <table class="table table-hover m-b-0 without-header">
+
+                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
-                                        <th>
-                                        <td>Descriptions</td>
-                                        <td>Actions</td>
-                                        </th>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                            <th>Actions</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($data['typeOrg'] as $typeOrg) : ?>
@@ -197,3 +201,18 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "bInfo": false, //Dont display info e.g. "Showing 1 to 4 of 4 entries"
+            "paging": true, //Dont want paging                
+            "bPaginate": false, //Dont want paging  
+            //"dom": "lfrti",
+        });
+    });
+</script>

@@ -56,6 +56,8 @@ class MembresDao extends \config\Model
     {
         extract($data);
         $db = self::getBdd();
+        
+        $organisation = OrganisationsDao::findOne($organisations_id)[0]['nom'];
 
         $sql = "INSERT INTO `membres` (`id`, `nom`, `prenoms`, `telephone`, `email`, `adresse`, `organisations_name`, `organisations_id`) 
                 VALUES (NULL, '$nom', '$prenoms', '$telephone', '$email', '$adresse', '$organisation', $organisations_id);";
@@ -92,8 +94,11 @@ class MembresDao extends \config\Model
     public static function updateOne($data)
     {
         extract($data);
+
+        $organisation = OrganisationsDao::findOne($organisations_id)[0]['nom'];
+        
         $sql = "UPDATE `membres` SET `nom`='$nom', `prenoms`='$prenoms', `telephone`='$telephone', 
-                       `adresse`='',`email`='$email', `organisations_name`='$organisation', `organisations_id`='$organisations_id'
+                       `adresse`='$adresse',`email`='$email', `organisations_name`='$organisation', `organisations_id`='$organisations_id'
                  WHERE `membres`.`id` = $id;";
 
         $stm = self::getBdd()->prepare($sql);

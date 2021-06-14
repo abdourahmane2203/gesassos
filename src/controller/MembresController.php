@@ -12,20 +12,21 @@ class MembresController extends Controller
 
         if (!empty($_POST) && !empty($_POST['btn_submit']=='add')) {
             extract($_POST);
-            if (!empty($nom) && !empty($prenoms) && !empty($telephone) && !empty($email) && !empty($adresse) && !empty($organisation)) {
+            if (!empty($nom) && !empty($prenoms) && !empty($telephone) && !empty($email) && !empty($adresse) && !empty($organisations_id)) {
                 MembresDao::insert($_POST);
             } else {
-                echo "veuillez saisir tous les champs !"; die;
+                echo '<script>alert("veuillez saisir tous les champs !")</script>'; //die;
             }
         }
 
         //Update
         if (!empty($_POST) && !empty($_POST['btn_submit']=='edit')) {
             extract($_POST);
-            if (!empty($nom) && !empty($prenoms) && !empty($telephone) && !empty($email) && !empty($adresse) && !empty($organisation)) {
+            
+            if (!empty($nom) && !empty($prenoms) && !empty($telephone) && !empty($email) && !empty($adresse) && !empty($organisations_id)) {
                 MembresDao::updateOne($_POST);
             } else {
-                echo "veuillez saisir tous les champs !"; die;
+                echo '<script>alert("veuillez saisir tous les champs !")</script>'; //die;
             }
         }
         $membres = MembresDao::findAll();
